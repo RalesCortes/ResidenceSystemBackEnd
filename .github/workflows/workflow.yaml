@@ -9,11 +9,8 @@ on:
         - prod
       
 
-
-env:
-  environment: Monday
-
 jobs:
+  environment: "{{ inputs.environment }}"
   build-deploy:
     runs-on: ubuntu-latest
     steps:
