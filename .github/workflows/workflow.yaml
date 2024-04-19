@@ -10,8 +10,9 @@ on:
       
 
 jobs:
-  environment: "{{ inputs.environment }}"
+  
   build-deploy:
+    environment: "{{ inputs.environment }}"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
