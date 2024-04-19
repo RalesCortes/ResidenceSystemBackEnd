@@ -1,0 +1,40 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  Sample SAM Template for basic-aws-apigateway-demo
+  
+Resources:
+  
+  ResidenceSystemApiGateway:
+    Type: AWS::Serverless::Api
+    Properties:
+      Name: Basic AWS Api Gateway
+      StageName: stage
+
+ LoginService:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ../src/handlers
+      Handler: login.handler
+      Runtime: python3.11
+      Events:
+        HelloWorldApi:
+          Type: Api
+          Properties:
+            RestApiId: !Ref ResidenceSystemApiGateway
+            Path: /login
+            Method: POST
+            
+Outputs:
+  ResidenceSystemApiGateway:
+    Description: 'API Gateway endpoint URL for Staging stage for Hello World function'
+    Value: !Sub 'https://${ResidenceSystemApiGateway}.execute-api.${AWS::Region}.amazonaws.com/Staging/hello/'
+  ResidenceSystemApiGatewayRestApiId:
+    Description: 'API Gateway ARN for Basic AWS API Gateway'
+    Value: !Ref ResidenceSystemApiGateway
+    Export:
+      Name: ResidenceSystemApiGateway-RestApiId
+  ResidenceSystemApiGatewayRootResourceId:
+    Value: !GetAtt ResidenceSystemApiGateway.RootResourceId
+    Export:
+      Name: ResidenceSystemApiGateway-RootResourceId
