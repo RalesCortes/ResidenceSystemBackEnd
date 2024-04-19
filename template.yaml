@@ -11,7 +11,7 @@ Resources:
       Name: Basic AWS Api Gateway
       StageName: stage
 
- LoginService:
+  LoginService:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: ../src/handlers
