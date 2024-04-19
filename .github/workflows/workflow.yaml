@@ -38,5 +38,4 @@ jobs:
 
       - name: sam deploy
         run: | 
-          sam deploy --no-confirm-changeset --no-fail-on-empty-changeset  --template packaged.yaml \ 
-              --stack-name residence-api-stack --s3-bucket residence-system-back-end --capabilities CAPABILITY_IAM --region us-east-1
+          sam deploy --no-confirm-changeset --no-fail-on-empty-changeset  --template packaged.yaml --stack-name residence-api-stack --s3-bucket residence-system-back-end --capabilities CAPABILITY_IAM --region us-east-1
