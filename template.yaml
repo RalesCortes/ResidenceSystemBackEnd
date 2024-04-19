@@ -16,7 +16,7 @@ Resources:
     Properties:
       CompatibleArchitectures:
         - x86_64
-      ContentUri: src
+      ContentUri: .
 
   LoginService:
     Type: AWS::Serverless::Function
@@ -25,7 +25,7 @@ Resources:
       Handler: login.handler
       Runtime: python3.11
       Layers:
-        - !Ref: RequirementsLayer
+        - !Ref RequirementsLayer
       Events:
         HelloWorldApi:
           Type: Api
