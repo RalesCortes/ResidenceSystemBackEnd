@@ -11,12 +11,21 @@ Resources:
       Name: Basic AWS Api Gateway
       StageName: stage
 
+  RequirementsLayer:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      CompatibleArchitectures:
+        - x86_64
+      ContentUri: src
+
   LoginService:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: src/handlers
       Handler: login.handler
       Runtime: python3.11
+      Layers:
+        - !Ref: RequirementsLayer
       Events:
         HelloWorldApi:
           Type: Api
