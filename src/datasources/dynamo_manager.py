@@ -9,9 +9,12 @@ class DynamoManager():
 
     def get_user_by_user_password_subdivision(self,user,password,sub_division):
         query_result = self.dynamo_db.Table(Table.USER).query(
-            KeyConditionExpression=Key('').eq('Arturus Ardvarkian')
+            KeyConditionExpression=Key(f'userId').eq('{sub_division}#{user}'),
+            FilterExpression=Attr('password').eq(password)
         )        
 
+        print(query_result)
+        
         if len(query_result["Items"]) > 0:
             return query_result["Items"][0]
         else:
