@@ -34,7 +34,7 @@ Resources:
             Path: /login
             Method: POST
 
-   UserTable:
+  UserTable:
     Type: AWS::DynamoDB::Table
     Properties:
       TableName: !Sub "USER"
