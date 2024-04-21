@@ -3,8 +3,8 @@ from datetime import datetime, timedelta
 from aws_lambda_powertools.utilities.data_classes import event_source, APIGatewayProxyEventV2
 from aws_lambda_powertools.utilities.parser import parse,ValidationError
 from src.utils.enums import  ResponseType
-from src.models.request import LoginRequestModel
-from src.models.response import ResponseModel
+from src.models.request.login_request import LoginRequestModel
+from src.models.response.response import ResponseModel
 from src.datasources.dynamo_manager import DynamoManager
 from src.utils.exceptions import DynamoException
 
