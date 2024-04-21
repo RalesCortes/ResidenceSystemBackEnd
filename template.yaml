@@ -33,6 +33,17 @@ Resources:
             RestApiId: !Ref ResidenceSystemApiGateway
             Path: /login
             Method: POST
+
+   UserTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: !Sub "USER"
+      AttributeDefinitions:
+        - AttributeName: "userId"
+          AttributeType: "S"
+      KeySchema:
+        - AttributeName: "userId"
+          KeyType: "HASH"
             
 Outputs:
   ResidenceSystemApiGateway:
