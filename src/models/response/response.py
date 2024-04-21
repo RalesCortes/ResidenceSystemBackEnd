@@ -1,5 +1,5 @@
 from aws_lambda_powertools.utilities.parser import BaseModel, Field
-from utils.enums import ResponseType
+from src.utils.enums import ResponseType
 import json 
 
 class ResponseModel(BaseModel):        
