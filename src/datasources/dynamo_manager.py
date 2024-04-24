@@ -1,6 +1,7 @@
 from utils.enums import Table
 import boto3
 from utils.exceptions import DynamoException
+from boto3.dynamodb.conditions import Key, Attr
 
 
 class DynamoManager():
