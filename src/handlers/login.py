@@ -2,11 +2,11 @@ from jose import JWTError, jwt
 from datetime import datetime, timedelta
 from aws_lambda_powertools.utilities.data_classes import event_source, APIGatewayProxyEventV2
 from aws_lambda_powertools.utilities.parser import parse,ValidationError
-from src.utils.enums import  ResponseType
-from src.models.request.login_request import LoginRequestModel
-from src.models.response.response import ResponseModel
-from src.datasources.dynamo_manager import DynamoManager
-from src.utils.exceptions import DynamoException
+from utils.enums import  ResponseType
+from models.request.login_request import LoginRequestModel
+from models.response.response import ResponseModel
+from datasources.dynamo_manager import DynamoManager
+from utils.exceptions import DynamoException
 
 
 SECRET_KEY = "e5747de9a49342cfb7fafd0c05eb1508"

@@ -1,6 +1,6 @@
-from src.utils.enums import Table
+from utils.enums import Table
 import boto3
-from src.utils.exceptions import DynamoException
+from utils.exceptions import DynamoException
 
 
 class DynamoManager():

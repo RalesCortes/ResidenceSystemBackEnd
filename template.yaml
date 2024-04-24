@@ -21,7 +21,7 @@ Resources:
   LoginService:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: ../src
+      CodeUri: src
       Handler: handlers/login.handler
       Runtime: python3.11
       Layers:
