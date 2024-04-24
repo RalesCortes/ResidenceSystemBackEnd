@@ -14,10 +14,10 @@ class ResponseModel(BaseModel):
 
         match self.type:
             case ResponseType.SUCCESS.value:
-                response["errorCode"] = 200
+                response["statusCode"] = 200
             case ResponseType.CUSTOM_ERROR.value:
-                response["errorCode"] = 512                
+                response["statusCode"] = 512                
             case ResponseType.ERROR.value:
-                response["errorCode"] = 500
+                response["statusCode"] = 500
                 
         return response

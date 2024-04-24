@@ -10,7 +10,7 @@ class DynamoManager():
 
     def get_user_by_user_password_subdivision(self,user,password,sub_division):
         query_result = self.dynamo_db.Table(Table.USER.value).query(
-            KeyConditionExpression=Key(f'userId').eq('{sub_division}#{user}'),
+            KeyConditionExpression=Key(f'userId').eq(f'{sub_division}#{user}'),
             FilterExpression=Attr('password').eq(password)
         )        
 
