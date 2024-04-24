@@ -29,7 +29,7 @@ jobs:
       - name: package requirements layer
         run: |
           pip install --target layer/python -r requirements.txt
-      # sam build 
+      # sam build
       - run: sam build --use-container
 
       - name: sam deploy
