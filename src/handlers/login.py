@@ -29,13 +29,13 @@ def handler(event: APIGatewayProxyEventV2, context):
             "access_token": create_access_token(user_data)
         }
 
-        return ResponseModel(body = response, type = ResponseType.SUCCESS).make_response()        
+        return ResponseModel(body = response, type = ResponseType.SUCCESS.value).make_response()        
     except ValidationError as e:
-        return ResponseModel(body = {"message":str(e)} , type = ResponseType.CUSTOM_ERROR).make_response()
+        return ResponseModel(body = {"message":str(e)} , type = ResponseType.CUSTOM_ERROR.value).make_response()
     except DynamoException as e:
-        return ResponseModel(body = {"message":str(e)} , type = ResponseType.CUSTOM_ERROR).make_response()
+        return ResponseModel(body = {"message":str(e)} , type = ResponseType.CUSTOM_ERROR.value).make_response()
     except Exception as e:
-        return ResponseModel(body = {"message":str(e)}, type = ResponseType.ERROR).make_response()
+        return ResponseModel(body = {"message":str(e)}, type = ResponseType.ERROR.value).make_response()
 
     
 
