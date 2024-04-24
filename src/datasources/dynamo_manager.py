@@ -8,7 +8,7 @@ class DynamoManager():
          self.dynamo_db = boto3.resource('dynamodb')
 
     def get_user_by_user_password_subdivision(self,user,password,sub_division):
-        query_result = self.dynamo_db.Table(Table.USER).query(
+        query_result = self.dynamo_db.Table(Table.USER.value).query(
             KeyConditionExpression=Key(f'userId').eq('{sub_division}#{user}'),
             FilterExpression=Attr('password').eq(password)
         )        

@@ -13,11 +13,11 @@ class ResponseModel(BaseModel):
         }
 
         match self.type:
-            case ResponseType.SUCCESS:
+            case ResponseType.SUCCESS.value:
                 response["errorCode"] = 200
-            case ResponseType.CUSTOM_ERROR:
+            case ResponseType.CUSTOM_ERROR.value:
                 response["errorCode"] = 512                
-            case ResponseType.ERROR:
+            case ResponseType.ERROR.value:
                 response["errorCode"] = 500
                 
         return response
