@@ -25,7 +25,6 @@ def handler(event: APIGatewayProxyEventV2, context):
                                                             password= login_request_model.password, 
                                                             sub_division= login_request_model.subdivision)
         response = {
-            "user_data": user_data,
             "access_token": create_access_token(user_data)
         }
 
