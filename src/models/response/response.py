@@ -9,8 +9,14 @@ class ResponseModel(BaseModel):
     def make_response(self):
         
         response = {
-            "body": json.dumps(self.body)
+            "body": json.dumps(self.body),
+            "headers": {
+                "Access-Control-Allow-Headers" : "Content-Type",
+                "Access-Control-Allow-Origin": "*", 
+                "Access-Control-Allow-Methods": "POST"
+            }
         }
+        
 
         match self.type:
             case ResponseType.SUCCESS.value:
