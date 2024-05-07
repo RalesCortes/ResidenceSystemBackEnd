@@ -10,6 +10,10 @@ Resources:
     Properties:
       Name: Basic AWS Api Gateway
       StageName: stage
+      Cors:
+        AllowMethods: "'GET,POST,OPTIONS'"
+        AllowHeaders: "'content-type'"
+        AllowOrigin: "'*'"
 
   RequirementsLayer:
     Type: AWS::Serverless::LayerVersion
